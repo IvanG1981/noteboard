@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  seen: false
+  expires_by: 2019-09-09 18:10:11
+
+two:
+  content: MyString
+  seen: false
+  expires_by: 2019-09-09 18:10:11
