@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  #get 'profiles/new'
+  #get 'profiles/create'
+  #get 'profiles/edit'
+  #get 'profiles/update'
+  #get 'profiles/index'
+  resources :profiles
   resources :notes
   #get 'notes/new'
   #get 'notes/create'
