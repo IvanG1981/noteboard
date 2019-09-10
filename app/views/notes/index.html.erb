@@ -8,16 +8,16 @@
     <% end %>
     <div >
         <% @notes.each do |note| %>
-        <div >
-          <span>
-            <i><%= time_ago_in_words(note.created_at) %></i>
-          </span>
-          <p>
-            <%= note.content %>
-          </p>
-          <span>
-            <%= note.created_at %>
-          </span>
-        </div>
-      <% end %>
+          <% unless note.seen  %>
+            <p><%=note.content%>
+              <span>
+                <i>&nbsp;<%= link_to_unless(note.seen, 'Seen', note_seen_path(note)) %></i>
+              </span>
+            </p>
+            <span>
+                <i><%= time_ago_in_words(note.created_at) %>&nbsp;ago</i>
+            </span>
+
+          <% end %>
+        <%end%>
     </div>

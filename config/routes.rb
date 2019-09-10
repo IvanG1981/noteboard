@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   #get 'profiles/index'
   resources :profiles
   resources :notes
+  get 'notes/seen/:id', to: 'notes#seen'
+  patch 'notes/seen/:id', to: 'notes#seen', as: :note_seen
   #get 'notes/new'
   #get 'notes/create'
   #get 'notes/index'
