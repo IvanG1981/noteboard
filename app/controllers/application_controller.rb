@@ -1,6 +1,3 @@
 class ApplicationController < ActionController::Base
-  def home
-    render html: "Hello World!!!"
-
-  end
+  protect_from_forgery with: :null_session
 end

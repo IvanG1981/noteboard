@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Noteboard</title>
-    
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,9 @@
 
   <body>
     <%= render 'layouts/header' %>
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

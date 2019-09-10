@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @note = Note.new
   end
@@ -21,7 +22,7 @@ class NotesController < ApplicationController
     @note = Note.find(id)
     @note.note_seen
     redirect_to root_path
-    
+
   end
 
   private
