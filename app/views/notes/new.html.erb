@@ -12,7 +12,7 @@
 
   <div>
     <%= form_for @note do |form| %>
-
+    <%= render 'shared/error_messages' %>
       <%= form.text_area :content , cols: '80', rows: '5', placeholder: "What's up?"%><br />
 
       <div class="">
