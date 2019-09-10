@@ -1,11 +1,11 @@
-<% if @note.errors.any? %>
+<% if object.errors.any? %>
   <div>
     <div>
-        The form contains <%= pluralize(@note.errors.count, "error") %>.
+        The form contains <%= pluralize(object.errors.count, "error") %>.
     </div>
 
     <ul>
-      <% @note.errors.full_messages.each do |msg| %>
+      <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>

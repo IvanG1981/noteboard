@@ -2,12 +2,21 @@ class NotesController < ApplicationController
   before_action :authenticate_user!
   def new
     @note = Note.new
+
   end
+
   def create
-    Note.create(note_params)
-    flash[:success] = 'Note Created'
-    redirect_to root_path
+    @note = Note.new(note_params)
+
+    if @note.save
+      redirect_to root_path
+      flash[:success] = 'Note Created'
+    else
+      flash[:error] = 'Error'
+      render "new"
+    end
   end
+
   def index
     @notes = Note.all.order(created_at: :desc)
 
@@ -30,4 +39,5 @@ class NotesController < ApplicationController
   def note_params
     params.require(:note).permit(:content, :seen)
   end
+
 end
