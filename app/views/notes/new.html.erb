@@ -1,2 +1,23 @@
 <h1>Notes#new</h1>
 <p>Find me in app/views/notes/new.html.erb</p>
+
+
+<div >
+  <div >
+    <%= link_to "Back", root_path %>
+
+
+
+  </div>
+
+  <div>
+    <%= form_for @note do |form| %>
+
+      <%= form.text_area :content , cols: '80', rows: '5', placeholder: "What's up?"%><br />
+
+      <div class="">
+        <%= form.submit 'Post it!!' %>
+      </div>
+    <% end %>
+  </div>
+</div>
