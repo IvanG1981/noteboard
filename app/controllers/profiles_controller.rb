@@ -1,12 +1,20 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @profile = Profile.new
   end
 
   def create
-    Profile.create(profile_params)
-    flash[:success] = 'Profile Created'
-    redirect_to root_path
+    @profile = Profile.new(profile_params)
+
+
+    if @profile.save
+      redirect_to root_path
+      flash[:success] = "New Profile Created"
+    else
+      flash[:danger]= "Error creating Profile"
+      render "new"
+    end
 
   end
 
@@ -22,8 +30,8 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :lastname)
+    params.require(:profile).permit(:name, :lastname, :nickname)
   end
 
-  
+
 end

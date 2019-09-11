@@ -13,7 +13,7 @@ class NotesController < ApplicationController
       redirect_to root_path
       flash[:success] = 'Note Created'
     else
-      flash[:error] = 'Error'
+      flash[:danger] = 'Error'
       render "new"
     end
   end

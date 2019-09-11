@@ -1,0 +1,83 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Header */
+#header {
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 60px;
+}
+#navbar {
+  background-color: #e3f2fd;
+  padding-right: 60px;
+}
+/*Application html*/
+#alertbox {
+  margin-right: 60px;
+  margin-left: 60px;
+}
+/*Index view
+/*AddNoteButton*/
+#AddNoteButton {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+/*Each note box */
+#notebox {
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  width: 80vh;
+  border-radius: 25px;
+}
+/*Notes container */
+.container {
+  position: absolute;
+  margin-left: 420px;
+}
+
+/*New note html*/
+.post-it {
+  background-color: #329cc3;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: transparent;
+  border-radius: 100px;
+  padding: 6px 16px;
+}
+.postitButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+#backbutton {
+  display: flex;
+  justify-content: center;
+}
+#textarea {
+  display: flex;
+  width: 500px;
+  height: 100px;
+}
+#notebutton {
+  display: flex;
+  justify-content: center;
+}
+#notelabel {
+  text-align: center;
+}
+/*log IN*/
+.logincontainer {
+  position: absolute;
+  margin-left: 600px;
+}
+.actions,
+.field,
+h2 {
+  text-align: center;
+}
+/*Profile new*/
+.profileform {
+  display: block;
+}

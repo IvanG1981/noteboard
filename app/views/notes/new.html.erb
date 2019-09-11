@@ -1,23 +1,19 @@
-<h1>Notes#new</h1>
-<p>Find me in app/views/notes/new.html.erb</p>
 
 
 <div >
-  <div >
-    <%= link_to "Back", root_path %>
+    <div id="backbutton" >
+      <%= link_to "Back", root_path %>
+    </div>
+    <h1 id="notelabel">Write it!!</h1><br/>
+    <div class="form-group" id="notebutton">
 
+        <%= form_for @note do |form| %>
+          <%= render 'shared/error_messages', object: @note %>
+          <%= form.text_area :content , placeholder: "What's up?", class: 'form-control', id:'textarea'%><br />
 
-
-  </div>
-
-  <div>
-    <%= form_for @note do |form| %>
-    <%= render 'shared/error_messages', object: @note %>
-      <%= form.text_area :content , cols: '80', rows: '5', placeholder: "What's up?"%><br />
-
-      <div class="">
-        <%= form.submit 'Post it!!' %>
-      </div>
-    <% end %>
-  </div>
+          <div class="postitButtonContainer">
+            <%= form.submit 'Post it!!', class: 'post-it' %>
+          </div>
+        <% end %>
+    </div>
 </div>

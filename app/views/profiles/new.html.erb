@@ -1,10 +1,20 @@
-<h1>Profiles#new</h1>
 
+<div class="field">
+  <h1>Create a new profile</h1><br/>
 
-<ul>
-<%= form_for @profile, url: profiles_path, method: :create do |p| %>
-  <li>Name:<%= p.text_field :name %></li><br/>
-  <li>Lastname:<%= p.text_field :lastname %></li><br/>
-  <%=p.submit 'SUBMIT' %>
-<% end %>
-</ul>
+      <div class="field" id='notebutton'>
+          <%= form_for @profile do |p| %>
+          <%= render 'shared/error_messages', object: @profile %>
+                  <label >Name: </label><br/>
+                  <%= p.text_field :name %><br/>
+                  <label >Lastname: </label><br/>
+                  <%= p.text_field :lastname %><br/>
+                  <label >Nickname: </label><br/>
+                  <%= p.text_field :nickname %><br/><br/>
+                    <div class="postitButtonContainer">
+                      <%=p.submit 'SUBMIT', class:'post-it' %>
+                    </div>
+          <% end %>
+      </div>
+
+</div>

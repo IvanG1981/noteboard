@@ -1,32 +1,23 @@
-<div class="row">
-  <div class="columns small-12 medium-6">
-    x
-  </div>
-  <div class="columns small-12 medium-6">
-    y
-  </div>
-</div>
-
 
 <%= link_to new_note_path do %>
-  <span >
-      Write Note
-  </span>
+  <button type="button" class="btn btn-success btn-lg" id="AddNoteButton">Add Note</button>
+  <br/>
 <% end %>
-<div >
+<div class="container" >
     <% @notes.each do |note| %>
+      <div class="card text-white bg-secondary mb-3" id="notebox">
 
-        <p><%=note.content%>
+          <h5 class="card-header">Written &nbsp;<%= time_ago_in_words(note.created_at) %></h5>
+            <div class="card-body">
+              <p class="card-text"><%=note.content%></p>
+              <span>
+                <a><%= link_to_unless(note.seen, 'Seen', note_seen_path(note)) %></a>
+                <br/>
+              </span>
+            </div>
           <span>
-            <i>&nbsp;<%= link_to_unless(note.seen, 'Seen', note_seen_path(note)) %></i>
-            <br/>
-          </span>
-
-        </p>
-        <span>
-            <i><%= time_ago_in_words(note.created_at) %>&nbsp;ago</i><br/>
             <i>This note will expire at <%= Time.at(note.expires_by.to_i).strftime("%B %e, %Y at %I:%M %p")%>&nbsp;</i>
-        </span>
-
+          </span>
+      </div>
     <% end %>
 </div>

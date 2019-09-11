@@ -1,12 +1,12 @@
-<header>
+<header  id="header">
   <div >
-    <nav>
-      <ul >
+    <nav class="navbar navbar-light" id="navbar"  >
+      <ul class="nav navbar-nav navbar-right" >
         <% if user_signed_in?  %>
           <% current_user.email %>
             <li><%= link_to "Home",  notes_path %></li>
             <li><%= link_to "Profile",   new_profile_path %></li>
-            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, style: "color: black;" %></li>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
     </nav>
