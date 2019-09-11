@@ -9,6 +9,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     if @note.save
+      @note.save
       redirect_to root_path
       flash[:success] = 'Note Created'
     else
@@ -18,7 +19,8 @@ class NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.all.order(created_at: :desc)
+    @notes = Note.where("seen = ? and expires_by > ?", false, Time.now.utc)
+    #@notes = Note.all.order(created_at: :desc)
 
   end
   def destroy

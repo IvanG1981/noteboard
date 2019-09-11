@@ -1,5 +1,5 @@
 class Note < ApplicationRecord
-  before_create :set_expires_by
+  after_save :set_expires_by
   validates :content, presence: true, length: { maximum: 140}
 
   def note_seen
@@ -9,7 +9,7 @@ class Note < ApplicationRecord
   end
 
   def set_expires_by
-    self.expires_by = self.created_at + 20.minutes
+    self.expires_by = self.created_at + 24.hours
   end
 
 end
