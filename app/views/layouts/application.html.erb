@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Noteboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation.min.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation.min.js"> </script>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,9 +15,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
     <%= yield %>
   </body>
 </html>
